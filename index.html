@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jude Arom F. Dominguez | Portfolio</title>
+
+    <!-- External CSS stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ============================================================
+         NAVIGATION BAR
+         Logo on the left, links on the right — built by script.js.
+         To change links, edit the "navLinks" array in script.js.
+    ============================================================ -->
+    <nav id="navbar">
+
+        <!-- Site name / logo on the left -->
+        <div id="nav-logo">Jude Dominguez</div>
+
+        <!-- Desktop nav links — injected by script.js -->
+        <ul id="nav-links"></ul>
+
+        <!-- Hamburger button — visible only on mobile -->
+        <button id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+    </nav>
+
+    <!-- Mobile dropdown — links injected by script.js -->
+    <div id="mobile-menu"></div>
+
+
+    <!-- ============================================================
+         HERO SECTION
+         Left: text content | Right: profile photo + amber blob
+         Edit name, label, bio, and button links below.
+    ============================================================ -->
+    <section id="about">
+
+        <!-- Flex row: text on left, photo+blob on right -->
+        <div class="hero-flex">
+
+            <!-- LEFT: Text content -->
+            <div class="hero-left">
+
+                <!-- Occupation label — edit text here -->
+                <p class="hero-label">IT Student</p>
+
+                <!-- Main heading — edit your name here -->
+                <h1 class="hero-heading">
+                    Hello,&nbsp; my name <br>
+                    is <span class="hero-name">Jude Arom F.<br>Dominguez</span>
+                </h1>
+
+                <!-- Short bio — edit this -->
+                <p class="hero-bio">
+                    A passionate IT student exploring the world of web
+                    development, design, and technology. Always eager
+                    to learn and build cool things.
+                </p>
+
+                <!-- Call-to-action buttons -->
+                <div class="hero-btns">
+
+                    <a href="#projects" class="btn btn-primary">Projects</a>
+
+                    <!-- Change href to your actual LinkedIn URL -->
+                    <a href="https://www.linkedin.com/in/yourprofile"
+                       target="_blank"
+                       class="btn btn-outline">LinkedIn</a>
+
+                </div>
+
+            </div><!-- end .hero-left -->
+
+            <!-- RIGHT: Photo inside amber blob -->
+            <div class="hero-right">
+
+                <!-- Amber blob background shape -->
+                <div class="hero-blob"></div>
+
+                <!-- ================================================
+                     YOUR PROFILE PHOTO
+                     Replace "your-photo.jpg" with your image file.
+                     The file must be in the same folder as index.html.
+
+                     Example:  src="jude.jpg"
+                               src="images/my-photo.png"
+                ================================================ -->
+                <img
+                    src="your-photo.jpg"
+                    alt="Photo of Jude Arom F. Dominguez"
+                    id="profile-photo"
+                >
+
+                <!-- Shown when photo is missing (hidden by JS on load) -->
+                <div id="photo-fallback">JAD</div>
+
+            </div><!-- end .hero-right -->
+
+        </div><!-- end .hero-flex -->
+
+    </section><!-- end #about -->
+
+
+    <!-- ============================================================
+         PROJECTS SECTION
+         Cards are built dynamically by script.js.
+         To add/edit/remove projects, update the "projects"
+         array inside script.js — no need to edit this section.
+    ============================================================ -->
+    <section id="projects">
+
+        <div class="section-header">
+            <h2>Projects</h2>
+            <div class="section-underline"></div>
+        </div>
+
+        <!-- Project cards injected here by script.js -->
+        <div id="projects-list"></div>
+
+    </section>
+
+
+    <!-- ============================================================
+         CONTACT SECTION
+         Form layout matches the reference: stacked fields + Send.
+         Validation handled by script.js.
+    ============================================================ -->
+    <section id="contact">
+
+        <div class="section-header">
+            <h2>Contact</h2>
+            <div class="section-underline"></div>
+        </div>
+
+        <form id="contact-form" novalidate>
+
+            <!-- Name field -->
+            <div class="form-group">
+                <label for="input-name">Name</label>
+                <input
+                    type="text"
+                    id="input-name"
+                    name="name"
+                    placeholder="Your full name"
+                    autocomplete="name"
+                >
+                <span class="field-error" id="error-name"></span>
+            </div>
+
+            <!-- Email field -->
+            <div class="form-group">
+                <label for="input-email">Email</label>
+                <input
+                    type="email"
+                    id="input-email"
+                    name="email"
+                    placeholder="your@email.com"
+                    autocomplete="email"
+                >
+                <span class="field-error" id="error-email"></span>
+            </div>
+
+            <!-- Message field -->
+            <div class="form-group">
+                <label for="input-message">Message</label>
+                <textarea
+                    id="input-message"
+                    name="message"
+                    rows="5"
+                    placeholder="Write your message here..."
+                ></textarea>
+                <span class="field-error" id="error-message"></span>
+            </div>
+
+            <!-- Success message — shown by script.js after valid submit -->
+            <div id="form-success">&#10003; Message sent! I'll get back to you soon.</div>
+
+            <!-- Send button aligned to the right like the reference -->
+            <div class="form-btn-row">
+                <button type="submit" class="btn btn-primary">Send</button>
+            </div>
+
+        </form>
+
+    </section>
+
+
+    <!-- ============================================================
+         FOOTER
+         Social icons built by script.js.
+         To change icons/links, edit "socialLinks" in script.js.
+         Change the copyright text in the <p> below.
+    ============================================================ -->
+    <footer id="footer">
+
+        <!-- Social icons injected here by script.js -->
+        <div id="footer-socials"></div>
+
+        <!-- Copyright — change name/year here -->
+        <p id="footer-copy">Jude Arom F. Dominguez 2025</p>
+
+        <!-- Decorative amber wave at the bottom (CSS shape) -->
+        <div class="footer-wave"></div>
+
+    </footer>
+
+
+    <!-- External JavaScript — at end of body so HTML loads first -->
+    <script src="script.js"></script>
+
+</body>
+</html>

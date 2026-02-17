@@ -1,0 +1,843 @@
+/* ============================================================
+   style.css — Portfolio Stylesheet
+   Jude Arom F. Dominguez
+
+   SECTIONS:
+   1.  Color Variables  ← Change your whole palette here
+   2.  Reset & Base
+   3.  Buttons
+   4.  Navbar
+   5.  Mobile Menu
+   6.  Hero Section
+   7.  Projects Section
+   8.  Contact Section
+   9.  Footer
+   10. Scroll Reveal Animation
+   11. Responsive (Mobile & Tablet)
+============================================================ */
+
+
+/* ============================================================
+   1. COLOR VARIABLES
+   Edit only these values to re-theme the entire page.
+   Palette: Deep Navy / Steel Blue / Amber / Off-White
+============================================================ */
+:root {
+    --navy: #1a3263;
+    /* dark navy  — text, nav bg         */
+    --steel: #547792;
+    /* mid blue   — accents, borders      */
+    --amber: #fab95b;
+    /* warm gold  — blob, buttons, lines  */
+    --amber-dark: #e09a30;
+    /* dark gold  — hover state           */
+    --cream: #e8e2db;
+    /* off-white  — page bg               */
+    --white: #ffffff;
+    /* pure white — cards, form           */
+    --text-dark: #1a1a2e;
+    /* near black — headings              */
+    --text-mid: #555555;
+    /* gray       — body text             */
+    --light-bg: #f0f2f5;
+    /* very light — hero section bg       */
+}
+
+
+/* ============================================================
+   2. RESET & BASE
+============================================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Shared section heading block */
+.section-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.section-header h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+/* Short amber line under section titles */
+.section-underline {
+    width: 50px;
+    height: 4px;
+    background-color: var(--amber);
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+
+/* ============================================================
+   3. BUTTONS
+   btn-primary = filled amber (Projects button)
+   btn-outline = transparent with border (LinkedIn button)
+============================================================ */
+.btn {
+    display: inline-block;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: background-color 0.25s, color 0.25s, transform 0.2s;
+}
+
+/* Amber filled — matches reference "Projects" button */
+.btn-primary {
+    background-color: var(--amber);
+    color: var(--navy);
+    border-color: var(--amber);
+}
+
+.btn-primary:hover {
+    background-color: var(--amber-dark);
+    border-color: var(--amber-dark);
+    transform: translateY(-2px);
+}
+
+/* Outlined — matches reference "LinkedIn" button */
+.btn-outline {
+    background-color: transparent;
+    color: var(--text-dark);
+    border-color: var(--text-dark);
+}
+
+.btn-outline:hover {
+    background-color: var(--text-dark);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+/* Smaller button variant used on project cards */
+.btn-sm {
+    padding: 7px 18px;
+    font-size: 0.85rem;
+    border-radius: 20px;
+    /* pill shape like the reference */
+    font-weight: normal;
+    border-color: #aaa;
+    color: var(--text-dark);
+}
+
+.btn-sm:hover {
+    background-color: var(--navy);
+    color: var(--white);
+    border-color: var(--navy);
+    transform: translateY(-1px);
+}
+
+
+/* ============================================================
+   4. NAVBAR
+   Flexbox row: logo left, links right.
+   Becomes solid navy when scrolled (class added by script.js).
+============================================================ -->*/
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    /* Flex row: logo on left, links on right */
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-between;
+
+padding: 16px 48px;
+background-color: transparent;
+transition: background-color 0.3s,
+box-shadow 0.3s;
+}
+
+/* Added by script.js when user scrolls past 60px */
+#navbar.scrolled {
+    background-color: var(--navy);
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.2);
+}
+
+#nav-logo {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--text-dark);
+    transition: color 0.3s;
+}
+
+#navbar.scrolled #nav-logo {
+    color: var(--white);
+}
+
+/* Flex row for nav links */
+#nav-links {
+    display: flex;
+    flex-direction: row;
+    gap: 28px;
+}
+
+#nav-links a {
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    transition: color 0.25s;
+    position: relative;
+}
+
+#navbar.scrolled #nav-links a {
+    color: var(--cream);
+}
+
+/* Underline hover effect */
+#nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--amber);
+    transition: width 0.25s;
+}
+
+#nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Hamburger — hidden on desktop */
+#hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+#hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: var(--text-dark);
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+#navbar.scrolled #hamburger span {
+    background-color: var(--white);
+}
+
+
+/* ============================================================
+   5. MOBILE MENU
+   Hidden by default. script.js adds class "open" to show it.
+============================================================ */
+#mobile-menu {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 62px;
+    left: 0;
+    width: 100%;
+    background-color: var(--navy);
+    z-index: 999;
+    padding: 12px 0;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+#mobile-menu.open {
+    display: flex;
+}
+
+#mobile-menu a {
+    padding: 13px 28px;
+    color: var(--cream);
+    font-size: 0.95rem;
+    transition: background-color 0.2s;
+}
+
+#mobile-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+/* ============================================================
+   6. HERO SECTION
+   Matches the reference exactly:
+   - Light gray background
+   - Amber blob in the top-right
+   - Flex row: text left, photo right
+============================================================ */
+#about {
+    min-height: 100vh;
+    background-color: var(--light-bg);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+
+    /* Flex column to vertically center the hero-flex row */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* The amber blob — top-right, organic shape like the reference */
+.hero-blob {
+    position: absolute;
+    top: -60px;
+    right: -80px;
+    width: 420px;
+    height: 420px;
+    background-color: var(--amber);
+    /* Organic blob shape */
+    border-radius: 60% 40% 55% 45% / 50% 45% 55% 50%;
+    z-index: 0;
+    animation: blobPulse 7s ease-in-out infinite;
+}
+
+@keyframes blobPulse {
+
+    0%,
+    100% {
+        border-radius: 60% 40% 55% 45% / 50% 45% 55% 50%;
+        transform: translateY(0);
+    }
+
+    50% {
+        border-radius: 45% 55% 40% 60% / 55% 40% 60% 45%;
+        transform: translateY(-14px);
+    }
+}
+
+/* Flex row: text left | photo right */
+.hero-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 120px 8% 80px;
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* LEFT column */
+.hero-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    animation: fadeUp 0.8s ease both;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Occupation label above the heading */
+.hero-label {
+    font-size: 0.82rem;
+    font-weight: bold;
+    color: var(--amber-dark);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+/* Main heading */
+.hero-heading {
+    font-size: 2.6rem;
+    font-weight: bold;
+    color: var(--text-dark);
+    line-height: 1.25;
+    margin-bottom: 16px;
+}
+
+/* Name portion in a slightly different weight */
+.hero-name {
+    color: var(--text-dark);
+    font-weight: 900;
+}
+
+/* Short bio paragraph */
+.hero-bio {
+    font-size: 0.92rem;
+    color: var(--text-mid);
+    max-width: 380px;
+    margin-bottom: 28px;
+    line-height: 1.7;
+}
+
+/* Flex row for CTA buttons */
+.hero-btns {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* RIGHT column — holds the blob + photo together */
+.hero-right {
+    position: relative;
+    flex-shrink: 0;
+    width: 320px;
+    height: 360px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    animation: fadeUp 1s 0.15s ease both;
+}
+
+/* ================================================
+   PROFILE PHOTO
+   <img id="profile-photo"> is in index.html.
+   Replace src="your-photo.jpg" with your image.
+   Sits on top of the amber blob (z-index: 1).
+================================================ */
+#profile-photo {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 50% 50% 48% 52% / 48% 48% 52% 52%;
+}
+
+/* Fallback initials circle — hidden by JS when photo loads */
+#photo-fallback {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: var(--white);
+    background-color: var(--steel);
+    border-radius: 50% 50% 48% 52% / 48% 48% 52% 52%;
+    z-index: 1;
+}
+
+
+/* ============================================================
+   7. PROJECTS SECTION
+   White background section.
+   Cards are flex rows (text left, image right — or flipped).
+   All cards built dynamically by script.js.
+============================================================ */
+#projects {
+    background-color: var(--white);
+    padding: 80px 8%;
+}
+
+/* Flex column: cards stacked vertically with gap */
+#projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+/* Single project card — flex row */
+.project-card {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    background-color: var(--white);
+    border-radius: 14px;
+    box-shadow: 0 2px 18px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    /* keeps image corners clipped */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 32px rgba(0, 0, 0, 0.13);
+}
+
+/* Flip: even cards put image on the LEFT */
+.project-card.flip {
+    flex-direction: row-reverse;
+}
+
+/* Text column inside the card */
+.card-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 36px 32px;
+    gap: 10px;
+}
+
+.card-text h3 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--text-dark);
+}
+
+.card-text p {
+    font-size: 0.88rem;
+    color: var(--text-mid);
+    line-height: 1.6;
+}
+
+/* Image column inside the card */
+.card-image {
+    flex-shrink: 0;
+    width: 260px;
+    min-height: 200px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--cream);
+}
+
+/* ================================================
+   PROJECT SCREENSHOT IMAGE
+   Built by script.js using the "image" property
+   in the projects array.
+   To add a screenshot: set image: "images/project1.png"
+   in the projects array inside script.js.
+================================================ */
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Emoji placeholder shown when no image is provided */
+.card-image .img-placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    background: linear-gradient(135deg, var(--cream) 0%, #d5cfc8 100%);
+}
+
+
+/* ============================================================
+   8. CONTACT SECTION
+   Light background with centered form.
+   Matches reference: stacked fields, Send button on right.
+============================================================ */
+#contact {
+    background-color: var(--light-bg);
+    padding: 80px 8%;
+}
+
+/* Centered form column */
+#contact-form {
+    max-width: 480px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* Each label + input pair */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    color: var(--text-mid);
+}
+
+/* Input and textarea share styles */
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 11px 0;
+    font-family: Arial, sans-serif;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #bbb;
+    /* single bottom border like the reference */
+    outline: none;
+    resize: vertical;
+    transition: border-color 0.25s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-bottom-color: var(--navy);
+}
+
+/* Error text shown by script.js */
+.field-error {
+    font-size: 0.8rem;
+    color: #e74c3c;
+    min-height: 14px;
+}
+
+/* Success message — hidden by default, shown by script.js */
+#form-success {
+    display: none;
+    background-color: rgba(46, 204, 113, 0.1);
+    border: 1px solid #2ecc71;
+    color: #1a7a45;
+    padding: 11px 14px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* Row that pushes the Send button to the right */
+.form-btn-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 8px;
+}
+
+
+/* ============================================================
+   9. FOOTER
+   Navy background.
+   Flex column: icons centered, copyright below, amber wave at bottom.
+============================================================ */
+#footer {
+    background-color: var(--navy);
+    padding: 44px 24px 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* Flex row of social icon links */
+#footer-socials {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+}
+
+/* Each social icon anchor */
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: background-color 0.25s, border-color 0.25s, transform 0.2s;
+}
+
+.social-icon:hover {
+    background-color: var(--amber);
+    border-color: var(--amber);
+    transform: translateY(-3px);
+}
+
+/* ================================================
+   SOCIAL MEDIA ICON IMAGES
+   Each <img> is built by script.js.
+   To set icons, update the "icon" property in the
+   socialLinks array inside script.js.
+
+   Example:  icon: "images/instagram-icon.png"
+
+   Free icons: https://icons8.com or https://flaticon.com
+   Save them in an "images/" folder inside your project.
+================================================ */
+.social-icon img {
+    width: 18px;
+    height: 18px;
+    /* invert() makes dark icons appear white on navy bg */
+    filter: invert(1);
+    transition: filter 0.25s;
+}
+
+.social-icon:hover img {
+    filter: invert(0) brightness(0.15);
+}
+
+#footer-copy {
+    font-size: 0.8rem;
+    color: rgba(232, 226, 219, 0.5);
+    padding-bottom: 24px;
+}
+
+/* Amber decorative wave — clips into an ellipse at the bottom */
+.footer-wave {
+    width: 100%;
+    height: 54px;
+    background-color: var(--amber);
+    clip-path: ellipse(55% 100% at 50% 100%);
+    margin-top: 8px;
+}
+
+
+/* ============================================================
+   10. SCROLL REVEAL ANIMATION
+   Elements with class "fade-in" are invisible at first.
+   script.js adds "visible" when they scroll into view.
+============================================================ */
+.fade-in {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger each card slightly */
+#projects-list .project-card:nth-child(1) {
+    transition-delay: 0.05s;
+}
+
+#projects-list .project-card:nth-child(2) {
+    transition-delay: 0.18s;
+}
+
+#projects-list .project-card:nth-child(3) {
+    transition-delay: 0.31s;
+}
+
+
+/* ============================================================
+   11. RESPONSIVE — TABLET & MOBILE
+============================================================ */
+
+/* Tablet — stack hero vertically */
+@media (max-width: 860px) {
+
+    .hero-flex {
+        flex-direction: column;
+        text-align: center;
+        padding: 110px 6% 60px;
+        gap: 48px;
+    }
+
+    .hero-bio {
+        margin: 0 auto 28px;
+    }
+
+    .hero-btns {
+        justify-content: center;
+    }
+
+    .hero-right {
+        width: 220px;
+        height: 260px;
+    }
+
+    /* Stack card image below text */
+    .project-card,
+    .project-card.flip {
+        flex-direction: column !important;
+    }
+
+    .card-image {
+        width: 100%;
+        height: 200px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    /* Navbar: hide desktop links, show hamburger */
+    #nav-links {
+        display: none;
+    }
+
+    #hamburger {
+        display: flex;
+    }
+
+    #navbar {
+        padding: 14px 20px;
+    }
+
+    .hero-heading {
+        font-size: 2rem;
+    }
+
+    #projects,
+    #contact {
+        padding: 60px 5%;
+    }
+
+    .card-text {
+        padding: 24px 20px;
+    }
+
+    .hero-blob {
+        width: 260px;
+        height: 260px;
+        top: -40px;
+        right: -50px;
+    }
+}
