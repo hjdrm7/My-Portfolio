@@ -1,217 +1,345 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- CHANGE: Update your name in the title -->
-    <title>About | Your Name</title>
-
-    <link rel="stylesheet" href="about.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Replace page title here -->
+    <title>About — Your Name</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet" />
 </head>
+
 <body>
+    <!-- ===================================================
+       NAVIGATION
+       =================================================== -->
+    <nav id="navbar" class="scrolled">
+        <div class="container nav-inner">
+            <!-- Replace initials/logo here -->
+            <a href="index.html" class="nav-logo">YN<span class="accent">.</span></a>
 
-    <!-- ============================================================
-         HEADER - Same navigation on every page
-         ============================================================ -->
-    <header class="site-header">
-        <div class="nav-container">
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
 
-            <!-- CHANGE: Replace "YN" with your initials -->
-            <a href="index.html" class="nav-logo">YN</a>
-
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html" class="active">About Me</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                </ul>
-            </nav>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#more-about" class="nav-link">More About Me</a></li>
+                <li>
+                    <a href="#skills-tools" class="nav-link">Skills &amp; Tools</a>
+                </li>
+                <li>
+                    <a href="#hobbies" class="nav-link">Hobbies &amp; Interests</a>
+                </li>
+                <li><a href="#motto" class="nav-link">Motto</a></li>
+            </ul>
         </div>
-    </header>
+    </nav>
 
-    <!-- ============================================================
-         MAIN CONTENT
-         ============================================================ -->
-    <main>
+    <!-- ===================================================
+       PAGE HERO — Personal Information
+       =================================================== -->
+    <section class="about-page-hero" id="more-about">
+        <div class="container">
+            <p style="
+            color: var(--accent);
+            font-size: 0.8rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+          ">
+                Personal Information
+            </p>
 
-        <!-- PAGE HEADING -->
-        <section class="page-header">
-            <p class="hero-label">Get to know me</p>
-            <h1 class="page-title">About <span class="accent">Me</span></h1>
-        </section>
+            <!-- Replace your name and headline here -->
+            <h1 style="
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            color: var(--cream);
+            font-weight: 400;
+            margin-bottom: 2.5rem;
+            line-height: 1.1;
+          ">
+                More about<br /><em style="color: var(--accent)">who I am</em>
+            </h1>
 
-        <!-- ABOUT CONTENT GRID (two columns: photo left, info right) -->
-        <section class="about-grid">
+            <div style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+          ">
+                <!-- Personal Details -->
+                <div class="reveal">
+                    <p style="
+                color: var(--text-muted);
+                font-size: 0.75rem;
+                letter-spacing: 0.15em;
+                text-transform: uppercase;
+                margin-bottom: 1.25rem;
+              ">
+                        The Basics
+                    </p>
 
-            <!-- LEFT COLUMN: Photo and quick contact -->
-            <div class="about-photo-col">
-
-                <div class="about-photo-frame">
-                    <!-- CHANGE: Replace "images/profile.jpg" with your actual photo.
-                         You can use the same photo as the landing page or a different one. -->
-                    <img src="images/profile.png" alt="Photo of Your Name" class="about-img">
+                    <div style="display: flex; flex-direction: column; gap: 0.1rem">
+                        <!-- Replace each value here -->
+                        <div style="
+                  display: flex;
+                  justify-content: space-between;
+                  padding: 0.9rem 0;
+                  border-bottom: 1px solid var(--border);
+                ">
+                            <span style="
+                    color: var(--text-muted);
+                    font-size: 0.8rem;
+                    text-transform: uppercase;
+                    letter-spacing: 0.08em;
+                  ">Full Name</span>
+                            <span style="
+                    color: var(--cream);
+                    font-family: var(--font-display);
+                    font-size: 1.05rem;
+                  ">Jude Arom Flores Dominguez</span>
+                        </div>
+                        <div style="
+                  display: flex;
+                  justify-content: space-between;
+                  padding: 0.9rem 0;
+                  border-bottom: 1px solid var(--border);
+                ">
+                            <span style="
+                    color: var(--text-muted);
+                    font-size: 0.8rem;
+                    text-transform: uppercase;
+                    letter-spacing: 0.08em;
+                  ">School</span>
+                            <span style="
+                    color: var(--cream);
+                    font-family: var(--font-display);
+                    font-size: 1.05rem;
+                  ">USTP - Oroquieta City Campus</span>
+                        </div>
+                        <div style="
+                  display: flex;
+                  justify-content: space-between;
+                  padding: 0.9rem 0;
+                  border-bottom: 1px solid var(--border);
+                ">
+                            <span style="
+                    color: var(--text-muted);
+                    font-size: 0.8rem;
+                    text-transform: uppercase;
+                    letter-spacing: 0.08em;
+                  ">Program</span>
+                            <span style="
+                    color: var(--cream);
+                    font-family: var(--font-display);
+                    font-size: 1.05rem;
+                  ">Bachelor of Science in Information Technology</span>
+                        </div>
+                        <div style="
+                  display: flex;
+                  justify-content: space-between;
+                  padding: 0.9rem 0;
+                  border-bottom: 1px solid var(--border);
+                ">
+                            <span style="
+                    color: var(--text-muted);
+                    font-size: 0.8rem;
+                    text-transform: uppercase;
+                    letter-spacing: 0.08em;
+                  ">Based In</span>
+                            <span style="
+                    color: var(--cream);
+                    font-family: var(--font-display);
+                    font-size: 1.05rem;
+                  ">Oroquieta City, Philippines</span>
+                        </div>
+                        <div style="
+                  display: flex;
+                  justify-content: space-between;
+                  padding: 0.9rem 0;
+                  border-bottom: 1px solid var(--border);
+                ">
+                            <span style="
+                    color: var(--text-muted);
+                    font-size: 0.8rem;
+                    text-transform: uppercase;
+                    letter-spacing: 0.08em;
+                  ">Year</span>
+                            <span style="
+                    color: var(--cream);
+                    font-family: var(--font-display);
+                    font-size: 1.05rem;
+                  ">Class of 2028</span>
+                        </div>
+                        <div style="
+                  display: flex;
+                  justify-content: space-between;
+                  padding: 0.9rem 0;
+                ">
+                            <span style="
+                    color: var(--text-muted);
+                    font-size: 0.8rem;
+                    text-transform: uppercase;
+                    letter-spacing: 0.08em;
+                  ">Email</span>
+                            <span style="
+                    color: var(--accent);
+                    font-family: var(--font-display);
+                    font-size: 1.05rem;
+                  ">dominguez.jude7@gmail.com</span>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Quick contact card below the photo -->
-                <div class="contact-card">
-                    <h3>Get In Touch</h3>
+                <!-- Bio -->
+                <div class="reveal" style="transition-delay: 0.15s">
+                    <p style="
+                color: var(--text-muted);
+                font-size: 0.75rem;
+                letter-spacing: 0.15em;
+                text-transform: uppercase;
+                margin-bottom: 1.25rem;
+              ">
+                        Bio
+                    </p>
 
-                    <!-- CHANGE: Replace with your real email address in both href and the text -->
-                    <a href="dominguez.jude7@gmail.com" class="contact-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                        </svg>
-                        <span class="__cf_email__" data-cfemail="b6cfd9c3c4d3dbd7dfdaf6d3dbd7dfda98d5d9db">[email&#160;protected]</span>
-                    </a>
-
-                    <!-- CHANGE: Replace with your actual city and country -->
-                    <p class="location-tag">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                        </svg>
-                        Oroquieta City, Philippines
+                    <!-- Replace bio paragraphs here -->
+                    <p style="
+                color: var(--text);
+                line-height: 1.9;
+                margin-bottom: 1.25rem;
+              ">
+                        Write your personal bio here — your background, what drives you,
+                        and what you hope to achieve. Be authentic and let your
+                        personality come through.
+                    </p>
+                    <p style="color: var(--text); line-height: 1.9">
+                        You can add a second paragraph here about your interests, your
+                        approach to work, or your future goals.
                     </p>
                 </div>
-
             </div>
+        </div>
+    </section>
 
-            <!-- RIGHT COLUMN: Bio text, table, skills, hobbies -->
-            <div class="about-content-col">
+    <!-- ===================================================
+       SKILLS & TOOLS
+       =================================================== -->
+    <section class="skills-page-section" id="skills-tools">
+        <div class="container">
+            <h2 class="section-title">
+                Skills <span class="accent">&amp; Tools</span>
+            </h2>
 
-                <!-- Personal Introduction -->
-                <div class="about-block">
+            <div class="skills-cards-grid">
+                <!-- Replace skill card titles and tags here — add or remove tags as needed -->
 
-                    <!-- CHANGE: Replace "Your Name" with your full name -->
-                    <h2>Hello, I'm <span class="accent">Jude Arom</span></h2>
-
-                    <!-- CHANGE: Write your own introduction paragraphs below.
-                         Use <strong> for bold words and <em> for italic words (like the activities showed). -->
-                    <p>
-                        I am a <strong>web developer</strong> and <strong>designer</strong> currently studying at
-                        <em>Your School Name Here</em>. I have a passion for creating clean, functional,
-                        and visually engaging websites that provide real value to users.
-                    </p>
-                    <p>
-                        My journey in web development started when I discovered how powerful
-                        <strong>HTML</strong> and <strong>CSS</strong> could be in bringing ideas to life.
-                        Since then, I've been continuously learning and building projects that challenge me to grow.
-                    </p>
-
+                <div class="skill-card reveal">
+                    <p class="skill-card-title">Design</p>
+                    <span class="skill-tag">Figma</span>
+                    <span class="skill-tag">Canva</span>
+                    <span class="skill-tag">Photoshop</span>
+                    <span class="skill-tag">Correl Draw</span>
                 </div>
 
-                <!-- Bio Data Table -->
-                <!-- This uses <table>, <thead>, <tbody>, <th>, and <td>
-                     exactly like the tables activity (Lab Activity 1, Part 3) -->
-                <div class="about-block">
-                    <h3>Personal Information</h3>
-
-                    <table class="bio-table">
-                        <thead>
-                            <tr>
-                                <th colspan="2">Bio Data</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">Full Name</th>
-                                <!-- CHANGE: Replace with your full name -->
-                                <td>Jude Arom Flores Dominguez</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Nickname</th>
-                                <!-- CHANGE: Replace with your nickname -->
-                                <td>Jude</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Course</th>
-                                <!-- CHANGE: Replace with your course -->
-                                <td>BS Information Technology</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Year Level</th>
-                                <!-- CHANGE: Replace with your year level -->
-                                <td>2nd Year</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">School</th>
-                                <!-- CHANGE: Replace with your school name -->
-                                <td>University of Science and Technology of Southern Philippines - Oroquieta City Campus</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Email</th>
-                                <!-- CHANGE: Replace with your email -->
-                                <td><a href="dominguez.jude7@gmail.com" class="contact-link">dominguez.jude7@gmail.com</a></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Location</th>
-                                <!-- CHANGE: Replace with your city -->
-                                <td>Oroquieta City, Philippines</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
+                <div class="skill-card reveal" style="transition-delay: 0.1s">
+                    <p class="skill-card-title">Development</p>
+                    <span class="skill-tag">HTML</span>
+                    <span class="skill-tag">CSS</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">Python</span>
                 </div>
 
-                <!-- Skills List -->
-                <!-- Uses <ul> and <li> like the lists activity -->
-                <div class="about-block">
-                    <h3>Skills &amp; Tools</h3>
-                    <ul class="skills-ul">
-                        <!-- CHANGE: Add, edit, or remove skills from this list -->
-                        <li>HTML5 &amp; CSS3</li>
-                        <li>JavaScript (DOM Manipulation)</li>
-                        <li>Responsive Web Design</li>
-                        <li>Figma &amp; UI Design</li>
-                        <li>Version Control with Git</li>
-                    </ul>
+                <div class="skill-card reveal" style="transition-delay: 0.2s">
+                    <p class="skill-card-title">Other</p>
+                    <span class="skill-tag">Research</span>
+                    <span class="skill-tag">Presentation</span>
+                    <span class="skill-tag">Photography</span>
+                    <span class="skill-tag">Video Editing</span>
                 </div>
-
-                <!-- Hobbies & Interests List (nested list like in the activity) -->
-                <div class="about-block">
-                    <h3>Hobbies &amp; Interests</h3>
-                    <ul class="skills-ul">
-                        <!-- CHANGE: Replace with your actual hobbies and sub-interests -->
-                        <li>Technology
-                            <ul>
-                                <li>Web Development</li>
-                                <li>UI/UX Design</li>
-                            </ul>
-                        </li>
-                        <li>Creative Arts
-                            <ul>
-                                <li>Digital Illustration</li>
-                                <li>Photography</li>
-                            </ul>
-                        </li>
-                        <li>Sports &amp; Fitness</li>
-                        <li>Reading &amp; Research</li>
-                    </ul>
-                </div>
-
-                <!-- My Motto (uses <q> tag like in the profile card activity) -->
-                <div class="about-block motto-block">
-                    <!-- CHANGE: Replace this with your own motto or favourite quote,
-                         and update the attribution below -->
-                    <p class="motto-text"><q>Stay hungry, stay foolish.</q></p>
-                    <p class="motto-author">— Steve Jobs</p>
-                </div>
-
-                <!-- Button back to home (like the "Back to Profile" button in the activity) -->
-                <a href="index.html" class="btn btn-secondary">Back to Home</a>
-
             </div>
+        </div>
+    </section>
 
-        </section>
+    <!-- ===================================================
+       HOBBIES & INTERESTS
+       =================================================== -->
+    <section class="hobbies-page-section" id="hobbies">
+        <div class="container">
+            <h2 class="section-title">
+                Hobbies <span class="accent">&amp; Interests</span>
+            </h2>
 
-    </main>
+            <div class="hobbies-cards">
+                <!-- Replace each hobby emoji, name, and description here -->
 
-    <!-- ============================================================
-         FOOTER
-         ============================================================ -->
-    <footer class="site-footer">
-        <p>
-            <!-- CHANGE: Replace "
+                <div class="hobby-card reveal">
+                    <div class="hobby-icon">🎨</div>
+                    <p class="hobby-name">Art &amp; Illustration</p>
+                    <!-- Replace description here -->
+                    <p class="hobby-desc">Replace with your hobby description</p>
+                </div>
+
+                <div class="hobby-card reveal" style="transition-delay: 0.1s">
+                    <div class="hobby-icon">📷</div>
+                    <p class="hobby-name">Photography</p>
+                    <p class="hobby-desc">Replace with your hobby description</p>
+                </div>
+
+                <div class="hobby-card reveal" style="transition-delay: 0.2s">
+                    <div class="hobby-icon">📚</div>
+                    <p class="hobby-name">Reading</p>
+                    <p class="hobby-desc">Replace with your hobby description</p>
+                </div>
+
+                <div class="hobby-card reveal" style="transition-delay: 0.3s">
+                    <div class="hobby-icon">🎵</div>
+                    <p class="hobby-name">Music</p>
+                    <p class="hobby-desc">Replace with your hobby description</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================
+       MOTTO / QUOTE
+       =================================================== -->
+    <section class="motto-section" id="motto">
+        <div class="container">
+            <!-- Replace motto/quote here -->
+            <blockquote class="motto-quote">
+                &ldquo;Your personal motto or favorite quote goes right here — make it
+                something meaningful.&rdquo;
+            </blockquote>
+
+            <!-- Replace attribution here -->
+            <p class="motto-author">— Your Name</p>
+
+            <div style="margin-top: 3rem">
+                <a href="index.html" class="btn btn-primary">&larr; Back to Home</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================
+       FOOTER
+       =================================================== -->
+    <footer>
+        <div class="container footer-inner">
+            <!-- Replace copyright here -->
+            <p>&copy; 2025 Your Name. All Rights Reserved.</p>
+            <a href="#" class="back-to-top" title="Back to top">&#8679;</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

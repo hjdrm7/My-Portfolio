@@ -1,158 +1,369 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!-- CHANGE: Update this to your name -->
-        <title>Jude Arom F. Dominguez | Portfolio</title>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Replace page title here -->
+    <title>Portfolio — Jude Arom Dominguez</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet" />
+</head>
 
-        <link rel="stylesheet" href="index.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
-            rel="stylesheet">
-    </head>
-    <body>
+<body>
 
-        <!-- ============================================================
-         HEADER - Navigation bar shared across all pages
-         ============================================================ -->
-        <header class="site-header">
-            <div class="nav-container">
+    <!-- ===================================================
+       NAVIGATION
+       =================================================== -->
+    <nav id="navbar">
+        <div class="container nav-inner">
+            <!-- Replace initials / logo text here -->
+            <a href="#hero" class="nav-logo">JD<span class="accent">.</span></a>
 
-                <!-- CHANGE: Replace "YN" with your own initials -->
-                <a href="index.html" class="nav-logo">JULY</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
 
-                <nav>
-                    <ul class="nav-links">
-                        <li><a href="index.html" class="active">Home</a></li>
-                        <li><a href="about.html">About Me</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                    </ul>
-                </nav>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Portfolio</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- ===================================================
+       HERO SECTION
+       =================================================== -->
+    <section id="hero">
+        <div class="hero-mountains"></div>
+        <div class="container hero-inner">
+
+            <div class="hero-text">
+                <!-- Replace your name here -->
+                <h1 class="hero-name">Jude Arom Dominguez</h1>
+                <!-- Replace your title/role here -->
+                <p class="hero-role">An <span span class="accent typed" id="typedRole"><i>Aspiring</i> Web Developer</span></p>
+                <!-- Replace hero bio here -->
+                <p class="hero-desc">
+                    Write a short professional bio here — who you are, what you do,
+                    and what makes your work unique. Keep it to 2–3 lines.
+                </p>
+
+                <!-- Social icons — replace each href, remove unused ones -->
+                <div class="hero-socials">
+                    <a href="https://facebook.com/hjdrm7" target="_blank" rel="noopener" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                        </svg>
+                    </a>
+                    <a href="https://instagram.com/hjdrm7" target="_blank" rel="noopener" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18"
+                            height="18">
+                            <rect x="2" y="2" width="20" height="20" rx="5" />
+                            <circle cx="12" cy="12" r="4" />
+                            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                        </svg>
+                    </a>
+                    <a href="https://github.com/hjdrm7" target="_blank" rel="noopener" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                            <path
+                                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z" />
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="hero-btns">
+                    <!-- Replace CV download link here -->
+                    <a href="your-cv.pdf" download class="btn btn-primary">Download CV</a>
+                    <!-- Replace portfolio/external link here -->
+                    <a href="https://your-portfolio-link.com" target="_blank" rel="noopener"
+                        class="btn btn-outline">Portfolio</a>
+                </div>
             </div>
-        </header>
 
-        <!-- ============================================================
-         MAIN CONTENT
-         ============================================================ -->
-        <main>
+            <div class="hero-visual">
+                <!-- Hexagon photo frame -->
+                <div class="hex-frame">
+                    <!-- Replace hero photo here — square image recommended -->
+                    <img src="images/hero-photo.jpg" alt="Your Name" />
+                </div>
+                <div class="hex-glow"></div>
+            </div>
 
-            <!-- HERO SECTION -->
-            <section class="hero">
+        </div>
+    </section>
+    <!-- ===================================================  END HERO  =================================================== -->
 
-                <!-- Left: text content -->
-                <div class="hero-text">
 
-                    <!-- CHANGE: Update your role or title here -->
-                    <p class="hero-label">Web Developer &amp; Designer</p>
+    <!-- ===================================================
+       ABOUT SECTION
+       =================================================== -->
+    <section id="about" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">About <span class="accent">Me</span></h2>
 
-                    <!-- CHANGE: Replace "Your Name" with your actual full name -->
-                    <h1 class="hero-heading">Hi, I'm <span class="accent">Jude
-                            Arom</span></h1>
+            <div class="about-inner">
 
-                    <!-- CHANGE: Write your own short intro/tagline -->
-                    <p class="hero-description">
-                        I'm a 2nd Year Student at University of Science and
-                        Technology of Southern Philippines - Oroquieta City
-                        Campus, currently taking up Bachelor of Science in
-                        Information Technology. I have a passion for web
-                        development and design, and I'm always eager to learn
-                        new technologies and improve my skills. I enjoy creating
-                        user-friendly and visually appealing websites that
-                        provide a great user experience.
+                <!-- Profile card -->
+                <div class="about-card reveal">
+                    <div class="about-photo-wrap">
+                        <!-- Replace about photo here -->
+                        <img src="images/about-photo.jpg" alt="Your Name" />
+                    </div>
+                    <div class="about-card-body">
+                        <!-- Replace name + roles here -->
+                        <h3 class="about-card-name">Your Full Name</h3>
+                        <p class="accent" style="font-size:.85rem; margin:.25rem 0 .1rem;">Your Primary Role</p>
+                        <p style="font-size:.8rem; color:var(--text-muted);">Your Secondary Role</p>
+                        <p style="font-size:.8rem; color:var(--text-muted);">Your School / Organization</p>
+                    </div>
+                </div>
+
+                <!-- Tabs -->
+                <div class="about-tabs-wrap reveal" style="transition-delay:.15s">
+                    <div class="tab-bar">
+                        <button class="tab-btn active" data-tab="education">Education</button>
+                        <button class="tab-btn" data-tab="experience">Experience</button>
+                        <button class="tab-btn" data-tab="details">Details</button>
+                    </div>
+
+                    <!-- Education Tab -->
+                    <div class="tab-pane active" id="tab-education">
+                        <!-- Replace each education entry here -->
+                        <div class="edu-entry">
+                            <h4 class="accent">Your Degree / Program Name</h4>
+                            <p class="edu-school">Your University / School — Your City</p>
+                            <p class="edu-meta">Session: 20XX – 20XX &nbsp;·&nbsp; Result: X.XX / X.XX</p>
+                        </div>
+                        <div class="edu-entry">
+                            <h4 class="accent">Previous Qualification</h4>
+                            <p class="edu-school">School Name — Your City</p>
+                            <p class="edu-meta">Session: 20XX – 20XX &nbsp;·&nbsp; Result: X.XX / X.XX</p>
+                        </div>
+                        <div class="edu-entry">
+                            <h4 class="accent">Earlier Qualification</h4>
+                            <p class="edu-school">School Name — Your City</p>
+                            <p class="edu-meta">Session: 20XX – 20XX &nbsp;·&nbsp; Result: X.XX / X.XX</p>
+                        </div>
+                    </div>
+
+                    <!-- Experience Tab -->
+                    <div class="tab-pane" id="tab-experience">
+                        <!-- Replace experience entries here -->
+                        <div class="edu-entry">
+                            <h4 class="accent">Your Job Title / Role</h4>
+                            <p class="edu-school">Company / Organization Name</p>
+                            <p class="edu-meta">20XX – Present &nbsp;·&nbsp; Brief description of responsibilities</p>
+                        </div>
+                        <div class="edu-entry">
+                            <h4 class="accent">Previous Role</h4>
+                            <p class="edu-school">Company / Organization Name</p>
+                            <p class="edu-meta">20XX – 20XX &nbsp;·&nbsp; Brief description of responsibilities</p>
+                        </div>
+                    </div>
+
+                    <!-- Details Tab -->
+                    <div class="tab-pane" id="tab-details">
+                        <div class="details-grid">
+                            <!-- Replace each detail value here -->
+                            <div class="detail-row"><span class="detail-label">Name</span><span>Your Full Name</span>
+                            </div>
+                            <div class="detail-row"><span class="detail-label">Email</span><span>your@email.com</span>
+                            </div>
+                            <div class="detail-row"><span class="detail-label">Phone</span><span>+1 (000)
+                                    000-0000</span></div>
+                            <div class="detail-row"><span class="detail-label">Location</span><span>Your City,
+                                    Country</span></div>
+                            <div class="detail-row"><span class="detail-label">Year</span><span>Class of 20XX</span>
+                            </div>
+                            <div class="detail-row"><span class="detail-label">Status</span><span
+                                    class="accent">Available</span></div>
+                        </div>
+                    </div>
+
+                    <!-- More About Me → about.html -->
+                    <a href="about.html" class="btn btn-primary" style="margin-top:2rem; display:inline-block;">More
+                        About Me</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- =================================================== END ABOUT =================================================== -->
+
+
+
+
+
+    <!-- ===================================================
+       PORTFOLIO / PROJECTS SECTION
+       =================================================== -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">My <span class="accent">Portfolio</span></h2>
+
+            <div class="projects-grid">
+
+                <!-- PROJECT 1 — replace href, image, title, description -->
+                <a href="https://hjdrm7.github.io/IT223-Lab-Activity-1/" target="_blank" rel="noopener"
+                    class="project-card reveal">
+                    <div class="project-thumb">
+                        <img src="images/falcon.jpg" alt="Project One" />
+                        <div class="project-overlay"><span>View Project ↗</span></div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-num accent">01</span>
+                        <!-- Replace project title here -->
+                        <h3 class="project-title">The Observer</h3>
+                        <!-- Replace project description here -->
+                        <p class="project-desc">Lab Activity 1 involves building a simple multi-page website using only
+                            HTML. Students practice the basic HTML structure, use semantic tags, create lists and
+                            tables, add images, and link pages with relative paths to understand proper content
+                            organization without using CSS.</p>
+                    </div>
+                </a>
+
+                <!-- PROJECT 2 -->
+                <a href="https://hjdrm7.github.io/Profile-Card/index.html" target="_blank" rel="noopener"
+                    class="project-card reveal" style="transition-delay:.1s">
+                    <div class="project-thumb">
+                        <img src="images/profile-card.png" alt="Project Two" />
+                        <div class="project-overlay"><span>View Project ↗</span></div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-num accent">02</span>
+                        <h3 class="project-title">Profile Card</h3>
+                        <p class="project-desc">Lab Activity 2 involves creating a responsive profile card using HTML
+                            and CSS. Students learn to structure content with semantic HTML, apply CSS styling for
+                            responsive design, and use flexbox for layout.</p>
+                    </div>
+                </a>
+
+                <!-- PROJECT 3 -->
+                <a href="https://hjdrm7.github.io/To-Do-List-Tab/" target="_blank" rel="noopener" class="project-card reveal"
+                    style="transition-delay:.2s">
+                    <div class="project-thumb">
+                        <img src="images/to-do-list.png" alt="Project Three" />
+                        <div class="project-overlay"><span>View Project ↗</span></div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-num accent">03</span>
+                        <h3 class="project-title">To-Do List Tab</h3>
+                        <p class="project-desc">Lab Activity 3 involves creating a responsive to-do list with tab functionality using HTML, CSS, and JavaScript. Students learn to manage multiple lists with tab switching and implement basic JavaScript interactions.</p>
+                    </div>
+                </a>
+
+                <!-- PROJECT 4 -->
+                <a href="https://your-project-4-link.com" target="_blank" rel="noopener" class="project-card reveal"
+                    style="transition-delay:.3s">
+                    <div class="project-thumb">
+                        <img src="images/project4-thumb.jpg" alt="Project Four" />
+                        <div class="project-overlay"><span>View Project ↗</span></div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-num accent">04</span>
+                        <h3 class="project-title">Project Title Four</h3>
+                        <p class="project-desc">Short description of what you made and what you learned.</p>
+                    </div>
+                </a>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- =================================================== END PROJECTS =================================================== -->
+
+
+    <!-- ===================================================
+       CONTACT SECTION
+       =================================================== -->
+    <section id="contact" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Contact <span class="accent">Me</span></h2>
+
+            <div class="contact-inner">
+
+                <!-- Left: Info -->
+                <div class="contact-info-col reveal">
+                    <!-- Replace logo initials here -->
+                    <p class="contact-logo">Jude Arom Dominguez<span class="accent">.</span></p>
+                    <!-- Replace contact description here -->
+                    <p class="contact-bio">
+                        Have a question or want to collaborate?
+                        Fill out the form and I'll get back to you shortly.
                     </p>
 
-                    <div class="hero-buttons">
-                        <a href="projects.html" class="btn btn-primary">View My
-                            Work</a>
-                        <a href="about.html" class="btn btn-secondary">About
-                            Me</a>
-                    </div>
-
-                    <!-- Social Media Icons -->
-                    <!-- CHANGE: Replace each href="#" with your real profile URL -->
-                    <div class="social-icons">
-
-                        <a href="#" target="_blank" aria-label="GitHub">
-                            <!-- GitHub Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="22"
-                                height="22" viewBox="0 0 24 24"
-                                fill="currentColor">
-                                <path
-                                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
-                            </svg>
-                        </a>
-
-                        <a href="#" target="_blank" aria-label="LinkedIn">
-                            <!-- LinkedIn Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="22"
-                                height="22" viewBox="0 0 24 24"
-                                fill="currentColor">
-                                <path
-                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                            </svg>
-                        </a>
-
-                        <a href="#" target="_blank" aria-label="Facebook">
-                            <!-- Facebook Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="22"
-                                height="22" viewBox="0 0 24 24"
-                                fill="currentColor">
-                                <path
-                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                            </svg>
-                        </a>
-
-                    </div>
-
+                    <ul class="contact-links">
+                        <!-- Replace each contact detail here — remove unused items -->
+                        <li class="contact-link-item">
+                            <span class="contact-icon">☎</span>
+                            <span>+63 918 456 9930</span>
+                        </li>
+                        <li class="contact-link-item">
+                            <span class="contact-icon">✉</span>
+                            <a href="mailto:dominguez.jude7@gmail.com">dominguez.jude7@gmail.com</a>
+                        </li>
+                        <li class="contact-link-item">
+                            <span class="contact-icon">ig</span>
+                            <a href="https://instagram.com/hjdrm7" target="_blank"
+                                rel="noopener">instagram.com/hjdrm7</a>
+                        </li>
+                        <li class="contact-link-item">
+                            <span class="contact-icon">f</span>
+                            <a href="https://facebook.com/hjdrm7" target="_blank"
+                                rel="noopener">facebook.com/hjdrm7</a>
+                        </li>
+                        <li class="contact-link-item">
+                            <span class="contact-icon">📍</span>
+                            <span>Oroquieta City, Philippines</span>
+                        </li>
+                    </ul>
                 </div>
 
-                <!-- Right: profile photo -->
-                <div class="hero-image-wrapper">
-                    <!-- CHANGE: Replace "images/profile.jpg" with your actual photo.
-                     Steps:
-                     1. Create a folder named "images" inside this portfolio folder.
-                     2. Put your photo inside that images folder.
-                     3. Update the filename below to match your photo name.
-                     Example: src="images/juan_dela_cruz.jpg" -->
-                    <div class="hero-image-frame">
-                        <img src="images/profile.png"
-                            alt="Profile photo of Your Name" class="hero-img">
+                <!-- Right: Form -->
+                <form class="contact-form reveal" id="contactForm" style="transition-delay:.15s">
+                    <div class="form-row">
+                        <input type="text" name="firstname" placeholder="First Name" required />
+                        <input type="text" name="lastname" placeholder="Last Name" required />
                     </div>
-                </div>
+                    <div class="form-row">
+                        <input type="tel" name="phone" placeholder="Phone" />
+                        <input type="text" name="subject" placeholder="Subject" />
+                    </div>
+                    <input type="email" name="email" placeholder="Email" required />
+                    <textarea name="message" placeholder="Message" rows="5" required></textarea>
+                    <button type="submit" class="btn btn-primary btn-full">Submit</button>
+                    <!-- Success message shown via JS -->
+                    <p id="formSuccess" style="display:none; color:var(--accent); margin-top:.75rem; font-size:.85rem;">
+                        Thank you! Your message has been sent.
+                    </p>
+                </form>
 
-            </section>
+            </div>
+        </div>
+    </section>
+    <!-- =================================================== END CONTACT =================================================== -->
 
-            <!-- SKILLS STRIP SECTION -->
-            <section class="skills-strip">
-                <p class="strip-label">Technologies I Work With</p>
-                <div class="skills-list">
-                    <!-- CHANGE: Add, remove, or rename these skill tags as needed -->
-                    <span class="skill-tag">HTML5</span>
-                    <span class="skill-tag">CSS3</span>
-                    <span class="skill-tag">JavaScript</span>
-                    <span class="skill-tag">VS Code</span>
-                    <span class="skill-tag">Photoshop</span>
-                    <span class="skill-tag">Python</span>
-                </div>
-            </section>
 
-        </main>
+    <!-- ===================================================
+       FOOTER
+       =================================================== -->
+    <footer>
+        <div class="container footer-inner">
+            <!-- Replace copyright year and name here -->
+            <p>&copy; 2026 Jude Arom. All Rights Reserved.</p>
+            <a href="#hero" class="back-to-top" title="Back to top">&#8679;</a>
+        </div>
+    </footer>
 
-        <!-- ============================================================
-         FOOTER
-         ============================================================ -->
-        <footer class="site-footer">
-            <p>
-                <!-- CHANGE: Replace "Your Name" with your name; update year if needed -->
-                &copy; 2025 <strong>JULY</strong>. All rights reserved.
-            </p>
-            <p class="footer-sub">Built with HTML, CSS &amp; JavaScript</p>
-        </footer>
+    <script src="script.js"></script>
+</body>
 
-        <script src="script.js"></script>
-    </body>
 </html>
