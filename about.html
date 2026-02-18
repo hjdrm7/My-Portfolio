@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CHANGE: Update your name in the title -->
+    <title>About | Your Name</title>
+
+    <link rel="stylesheet" href="about.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ============================================================
+         HEADER - Same navigation on every page
+         ============================================================ -->
+    <header class="site-header">
+        <div class="nav-container">
+
+            <!-- CHANGE: Replace "YN" with your initials -->
+            <a href="index.html" class="nav-logo">YN</a>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ============================================================
+         MAIN CONTENT
+         ============================================================ -->
+    <main>
+
+        <!-- PAGE HEADING -->
+        <section class="page-header">
+            <p class="hero-label">Get to know me</p>
+            <h1 class="page-title">About <span class="accent">Me</span></h1>
+        </section>
+
+        <!-- ABOUT CONTENT GRID (two columns: photo left, info right) -->
+        <section class="about-grid">
+
+            <!-- LEFT COLUMN: Photo and quick contact -->
+            <div class="about-photo-col">
+
+                <div class="about-photo-frame">
+                    <!-- CHANGE: Replace "images/profile.jpg" with your actual photo.
+                         You can use the same photo as the landing page or a different one. -->
+                    <img src="images/profile.png" alt="Photo of Your Name" class="about-img">
+                </div>
+
+                <!-- Quick contact card below the photo -->
+                <div class="contact-card">
+                    <h3>Get In Touch</h3>
+
+                    <!-- CHANGE: Replace with your real email address in both href and the text -->
+                    <a href="dominguez.jude7@gmail.com" class="contact-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                        <span class="__cf_email__" data-cfemail="b6cfd9c3c4d3dbd7dfdaf6d3dbd7dfda98d5d9db">[email&#160;protected]</span>
+                    </a>
+
+                    <!-- CHANGE: Replace with your actual city and country -->
+                    <p class="location-tag">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                        Oroquieta City, Philippines
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- RIGHT COLUMN: Bio text, table, skills, hobbies -->
+            <div class="about-content-col">
+
+                <!-- Personal Introduction -->
+                <div class="about-block">
+
+                    <!-- CHANGE: Replace "Your Name" with your full name -->
+                    <h2>Hello, I'm <span class="accent">Jude Arom</span></h2>
+
+                    <!-- CHANGE: Write your own introduction paragraphs below.
+                         Use <strong> for bold words and <em> for italic words (like the activities showed). -->
+                    <p>
+                        I am a <strong>web developer</strong> and <strong>designer</strong> currently studying at
+                        <em>Your School Name Here</em>. I have a passion for creating clean, functional,
+                        and visually engaging websites that provide real value to users.
+                    </p>
+                    <p>
+                        My journey in web development started when I discovered how powerful
+                        <strong>HTML</strong> and <strong>CSS</strong> could be in bringing ideas to life.
+                        Since then, I've been continuously learning and building projects that challenge me to grow.
+                    </p>
+
+                </div>
+
+                <!-- Bio Data Table -->
+                <!-- This uses <table>, <thead>, <tbody>, <th>, and <td>
+                     exactly like the tables activity (Lab Activity 1, Part 3) -->
+                <div class="about-block">
+                    <h3>Personal Information</h3>
+
+                    <table class="bio-table">
+                        <thead>
+                            <tr>
+                                <th colspan="2">Bio Data</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Full Name</th>
+                                <!-- CHANGE: Replace with your full name -->
+                                <td>Jude Arom Flores Dominguez</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Nickname</th>
+                                <!-- CHANGE: Replace with your nickname -->
+                                <td>Jude</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Course</th>
+                                <!-- CHANGE: Replace with your course -->
+                                <td>BS Information Technology</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Year Level</th>
+                                <!-- CHANGE: Replace with your year level -->
+                                <td>2nd Year</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">School</th>
+                                <!-- CHANGE: Replace with your school name -->
+                                <td>University of Science and Technology of Southern Philippines - Oroquieta City Campus</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Email</th>
+                                <!-- CHANGE: Replace with your email -->
+                                <td><a href="dominguez.jude7@gmail.com" class="contact-link">dominguez.jude7@gmail.com</a></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Location</th>
+                                <!-- CHANGE: Replace with your city -->
+                                <td>Oroquieta City, Philippines</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+                <!-- Skills List -->
+                <!-- Uses <ul> and <li> like the lists activity -->
+                <div class="about-block">
+                    <h3>Skills &amp; Tools</h3>
+                    <ul class="skills-ul">
+                        <!-- CHANGE: Add, edit, or remove skills from this list -->
+                        <li>HTML5 &amp; CSS3</li>
+                        <li>JavaScript (DOM Manipulation)</li>
+                        <li>Responsive Web Design</li>
+                        <li>Figma &amp; UI Design</li>
+                        <li>Version Control with Git</li>
+                    </ul>
+                </div>
+
+                <!-- Hobbies & Interests List (nested list like in the activity) -->
+                <div class="about-block">
+                    <h3>Hobbies &amp; Interests</h3>
+                    <ul class="skills-ul">
+                        <!-- CHANGE: Replace with your actual hobbies and sub-interests -->
+                        <li>Technology
+                            <ul>
+                                <li>Web Development</li>
+                                <li>UI/UX Design</li>
+                            </ul>
+                        </li>
+                        <li>Creative Arts
+                            <ul>
+                                <li>Digital Illustration</li>
+                                <li>Photography</li>
+                            </ul>
+                        </li>
+                        <li>Sports &amp; Fitness</li>
+                        <li>Reading &amp; Research</li>
+                    </ul>
+                </div>
+
+                <!-- My Motto (uses <q> tag like in the profile card activity) -->
+                <div class="about-block motto-block">
+                    <!-- CHANGE: Replace this with your own motto or favourite quote,
+                         and update the attribution below -->
+                    <p class="motto-text"><q>Stay hungry, stay foolish.</q></p>
+                    <p class="motto-author">— Steve Jobs</p>
+                </div>
+
+                <!-- Button back to home (like the "Back to Profile" button in the activity) -->
+                <a href="index.html" class="btn btn-secondary">Back to Home</a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ============================================================
+         FOOTER
+         ============================================================ -->
+    <footer class="site-footer">
+        <p>
+            <!-- CHANGE: Replace "

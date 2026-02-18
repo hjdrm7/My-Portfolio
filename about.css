@@ -1,0 +1,493 @@
+/* ================================================================
+   about.css — Styles for about.html (About / Bio Data Page)
+   ================================================================ */
+
+
+/* ----------------------------------------------------------------
+   CSS VARIABLES
+   CHANGE: Update these colors to match your preferred palette.
+   ---------------------------------------------------------------- */
+:root {
+    --color-bg:           #0f0f0f;
+    --color-surface:      #1a1a1a;
+    --color-border:       #2a2a2a;
+    --color-accent:       #c8f55a;      /* CHANGE: your highlight color */
+    --color-accent-hover: #b0e040;
+    --color-text:         #e8e8e8;
+    --color-text-muted:   #888888;
+    --color-white:        #ffffff;
+    --font-heading:       'Syne', sans-serif;
+    --font-body:          'DM Sans', sans-serif;
+    --radius:             12px;
+    --transition:         0.3s ease;
+}
+
+
+/* ----------------------------------------------------------------
+   GLOBAL RESET
+   ---------------------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    min-height: 100vh;
+    line-height: 1.7;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color var(--transition);
+}
+
+
+/* ================================================================
+   HEADER & NAVIGATION
+   ================================================================ */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(15, 15, 15, 0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-accent);
+    letter-spacing: 2px;
+    transition: opacity var(--transition);
+}
+
+.nav-logo:hover {
+    opacity: 0.8;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    letter-spacing: 0.5px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    transition: color var(--transition), border-color var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--color-white);
+    border-bottom-color: var(--color-accent);
+}
+
+
+/* ================================================================
+   BUTTONS
+   ================================================================ */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.75rem;
+    border-radius: 6px;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color var(--transition), color var(--transition), transform var(--transition);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background-color: var(--color-accent);
+    color: #111;
+    font-weight: 700;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-accent-hover);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-text);
+    border: 1.5px solid var(--color-border);
+}
+
+.btn-secondary:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+
+/* ================================================================
+   PAGE HEADER
+   ================================================================ */
+.page-header {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 2rem 2rem;
+}
+
+.hero-label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-accent);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+}
+
+.page-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-weight: 800;
+    color: var(--color-white);
+    line-height: 1.15;
+}
+
+.accent {
+    color: var(--color-accent);
+}
+
+
+/* ================================================================
+   ABOUT GRID (two columns: photo left, content right)
+   ================================================================ */
+.about-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 2rem 5rem;
+    display: flex;
+    gap: 4rem;
+    align-items: flex-start;
+}
+
+
+/* ----------------------------------------------------------------
+   LEFT COLUMN — Photo & Contact Card
+   ---------------------------------------------------------------- */
+.about-photo-col {
+    flex-shrink: 0;
+    width: 280px;
+}
+
+.about-photo-frame {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 3px solid var(--color-border);
+    margin-bottom: 1.5rem;
+}
+
+.about-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: var(--color-surface);
+}
+
+/* Contact card below the photo */
+.contact-card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+}
+
+.contact-card h3 {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: 1rem;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0.75rem;
+    word-break: break-all;
+    transition: color var(--transition);
+}
+
+.contact-link:hover {
+    color: var(--color-accent);
+}
+
+.location-tag {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+}
+
+
+/* ----------------------------------------------------------------
+   RIGHT COLUMN — Bio Text, Table, Skills, Hobbies
+   ---------------------------------------------------------------- */
+.about-content-col {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Each content block in the right column */
+.about-block {
+    margin-bottom: 2.5rem;
+}
+
+.about-block h2 {
+    font-family: var(--font-heading);
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: 1rem;
+}
+
+.about-block h3 {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.about-block p {
+    color: var(--color-text-muted);
+    margin-bottom: 0.85rem;
+    line-height: 1.8;
+}
+
+
+/* ================================================================
+   BIO DATA TABLE
+   (Uses <table>, <thead>, <tbody>, <th>, <td> like the activities)
+   ================================================================ */
+.bio-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.bio-table thead th {
+    background-color: var(--color-accent);
+    color: #111;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    text-align: left;
+    padding: 0.7rem 1rem;
+    border-radius: 6px 6px 0 0;
+}
+
+.bio-table tbody tr {
+    border-bottom: 1px solid var(--color-border);
+    transition: background-color var(--transition);
+}
+
+.bio-table tbody tr:hover {
+    background-color: var(--color-surface);
+}
+
+.bio-table tbody th {
+    padding: 0.7rem 1rem;
+    color: var(--color-text-muted);
+    font-weight: 500;
+    white-space: nowrap;
+    width: 38%;
+}
+
+.bio-table tbody td {
+    padding: 0.7rem 1rem;
+    color: var(--color-white);
+}
+
+
+/* ================================================================
+   SKILLS & HOBBIES LISTS
+   (Unordered list with nested lists — like the activity patterns)
+   ================================================================ */
+.skills-ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.skills-ul > li {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-left: 4px solid var(--color-accent);
+    padding: 0.6rem 1rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    color: var(--color-text);
+    transition: transform var(--transition);
+}
+
+.skills-ul > li:hover {
+    transform: translateX(5px);
+}
+
+/* Nested list inside hobbies (Lab Activity 1 Part 2 style) */
+.skills-ul ul {
+    list-style: none;
+    margin-top: 0.4rem;
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.skills-ul ul li {
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+    padding: 0.25rem 0.5rem;
+    border-left: 2px solid var(--color-border);
+}
+
+
+/* ================================================================
+   MOTTO BLOCK
+   ================================================================ */
+.motto-block {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.motto-text {
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--color-text) !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.motto-author {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+}
+
+
+/* ================================================================
+   FOOTER
+   ================================================================ */
+.site-footer {
+    background-color: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    text-align: center;
+    padding: 2.5rem 2rem;
+}
+
+.site-footer p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+.site-footer strong {
+    color: var(--color-white);
+}
+
+.footer-sub {
+    font-size: 0.78rem !important;
+    margin-top: 0.4rem;
+    opacity: 0.5;
+}
+
+
+/* ================================================================
+   RESPONSIVE
+   ================================================================ */
+@media (max-width: 900px) {
+    .about-grid {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 1.5rem 1.5rem 4rem;
+    }
+
+    .about-photo-col {
+        width: 100%;
+        display: flex;
+        gap: 1.5rem;
+        align-items: flex-start;
+    }
+
+    .about-photo-frame {
+        width: 180px;
+        flex-shrink: 0;
+    }
+
+    .page-header {
+        padding: 3rem 1.5rem 1.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-container {
+        padding: 1rem 1.25rem;
+    }
+
+    .nav-links {
+        gap: 1.5rem;
+    }
+
+    .about-photo-col {
+        flex-direction: column;
+    }
+
+    .about-photo-frame {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+    }
+
+    .page-header {
+        padding: 3rem 1.25rem 1.5rem;
+    }
+}
